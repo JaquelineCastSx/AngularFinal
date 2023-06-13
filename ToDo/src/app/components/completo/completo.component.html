@@ -1,15 +1,11 @@
-<div class="flex flex-row w-full overflow-hidden p-4 space-x-2">
-  <div class="flex flex-row w-full overflow-hidden p-4">
+<div class="flex flex-row w-full h-auto overflow-hidden p-4 space-x-2" *ngIf="this.task.isCompleted">
+  <div class="flex flex-row w-full text-sm overflow-hidden p-4">
+    <div class="flex-grow px-2 py-2 border-2">{{this.task.id}} </div>
+
     <div class="flex-grow px-2 py-2 border-2">{{this.task.title}} </div>
 
     <div class="flex-grow px-2 py-2 border-2">{{this.task.date}} </div>
   </div>
-
-  <button class="bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-2 px-4 max-h-16" >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-      <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-    </svg>
-  </button>
   <button
 
           class="bg-red-500 hover:bg-red-700 text-white rounded-xl py-2 px-4 max-h-16"

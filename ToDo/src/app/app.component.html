@@ -4,7 +4,7 @@
 >
   <div
     class="w-full max-w-xl h-4/6 my-10 shadow-2xl rounded-lg
-    overflow-hidden flex flex-col bg-white"
+    overflow-y-auto flex flex-col bg-white"
   >
     <div
       class="bg-cyan-900 text-white py-2 px-4 font-semibold
@@ -35,32 +35,19 @@
         </button>
       </div>
     </form>
-
-    <app-tareas></app-tareas>
+    <h1 class="font-bold text-center text-lg">Pending Tasks</h1>
+    <app-tareas *ngFor="let task of this.tasks" [task]="task"></app-tareas>
 
     <div
 
       class="justify-center items-center text-center max-w-xs h-auto
       m-3 rounded-lg overflow-hidden bg-yellow-400 text-lg underline-offset-4"
+      *ngIf="this.isCompleted"
     >
       Your To-do List is Empty!
     </div>
 
-    <h1 id="completed-tasks">Completed Tasks</h1>
-    <ul class="todo-list" >
-      <li >
-        <div>
-          <div></div>
-          <div>
-            <button
-
-              class=""
-            >
-              <i class="material-icons">delete</i>
-            </button>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <h1 class="font-bold text-center text-lg">Completed Tasks</h1>
+    <app-completo *ngFor="let task of this.tasks" [task]="task"></app-completo>
   </div>
 </div>

@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TareasComponent } from './components/tareas/tareas.component';
+import { CompletoComponent } from './components/completo/completo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TareasComponent
+    TareasComponent,
+    CompletoComponent
   ],
   imports: [
     BrowserModule,
