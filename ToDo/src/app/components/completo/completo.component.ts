@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IList } from 'src/app/interface/todo.interface';
+import { ListaService } from 'src/app/servicio/lista.service';
 
 @Component({
   selector: 'app-completo',
@@ -8,4 +9,5 @@ import { IList } from 'src/app/interface/todo.interface';
 })
 export class CompletoComponent {
   @Input() task!: IList;
+  @Input() done!: boolean;
 }

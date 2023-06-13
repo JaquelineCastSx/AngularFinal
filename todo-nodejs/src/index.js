@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
@@ -63,7 +63,7 @@ app.patch('/todos/:id', (req, res) => {
     }
 
     const todos = Data.readFile();
-    const todo = todos.find(todo => todo.id === parseInt(id));
+    const todo = todos.find(todo => todo.id == parseInt(id));
     if (!todo) {
         return res.status(404).json({
             error: true,
@@ -72,6 +72,7 @@ app.patch('/todos/:id', (req, res) => {
     }
 
     todo.completed = data.completed;
+    todo.completed = true;
     todo.title = data.title;
 
     todos[id - 1] = todo;

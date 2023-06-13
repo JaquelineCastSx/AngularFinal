@@ -36,18 +36,18 @@
       </div>
     </form>
     <h1 class="font-bold text-center text-lg">Pending Tasks</h1>
-    <app-tareas *ngFor="let task of this.tasks" [task]="task"></app-tareas>
+    <app-tareas *ngFor="let task of this.tasks" [task]="task" [done]="this.task.isCompleted" ></app-tareas>
 
     <div
 
       class="justify-center items-center text-center max-w-xs h-auto
       m-3 rounded-lg overflow-hidden bg-yellow-400 text-lg underline-offset-4"
-      *ngIf="this.isCompleted"
+    *ngIf="this.isCompleted"
     >
       Your To-do List is Empty!
     </div>
 
     <h1 class="font-bold text-center text-lg">Completed Tasks</h1>
-    <app-completo *ngFor="let task of this.tasks" [task]="task"></app-completo>
+    <app-completo *ngFor="let task of this.tasks" [task]="task" [done]="this.task.isCompleted" ></app-completo>
   </div>
 </div>

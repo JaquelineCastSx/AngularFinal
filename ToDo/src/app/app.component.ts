@@ -13,8 +13,7 @@ import { ListaService } from './servicio/lista.service';
 })
 export class AppComponent {
   tasks: IList[] = [];
-  isCompleted: boolean = false;
-
+isCompleted: boolean = false;
 
   form: FormGroup = new FormGroup({
     title: new FormControl('', [
