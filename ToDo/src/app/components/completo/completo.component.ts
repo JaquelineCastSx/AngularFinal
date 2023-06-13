@@ -11,3 +11,5 @@ export class CompletoComponent {
   @Input() task!: IList;
   @Input() done!: boolean;
 }
+
+
